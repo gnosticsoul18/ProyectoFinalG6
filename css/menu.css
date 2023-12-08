@@ -1,0 +1,91 @@
+﻿/* Estilos personalizados para el menú */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: midnightblue; /* Azul marino */
+}
+
+li {
+    float: left;
+}
+
+a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+    a:hover:not(.active) {
+        background-color: black; /* Azul oscuro para hover */
+    }
+
+.active {
+    background-color: dodgerblue; /* Naranja para elemento activo */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #001f3f; /* Azul oscuro para el fondo del contenedor */
+    color: white; /* Letras blancas */
+    padding: 10px;
+    border: 1px solid #ddd; /* Bordes de color gris claro */
+}
+
+    /* Estilos para las filas */
+    .grid-container div {
+        padding: 10px;
+        background-color: white; /* Fondo blanco para las filas */
+        color: black; /* Letras negras */
+        border: 1px solid #ddd; /* Bordes de color gris claro */
+    }
+
+        /* Estilos para los headers de las columnas */
+        .grid-container div.header {
+            background-color: #001f3f; /* Azul oscuro para el fondo del header */
+            color: white; /* Letras blancas */
+        }
+
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.fondo-container {
+    background-image: url('/Examen2/img/fondo1.jpg');
+    background-size: cover; /* Cubre completamente el contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat;
+    height: 100vh; /* Establece la altura al 100% del viewport */
+    margin: 0; /* Elimina el margen predeterminado del body */
+    padding: 0; /* Elimina el relleno predeterminado del body */
+}
+
+    .fondo-container h1 {
+        color: white;
+        text-align: center;
+        font-size: 2em;
+    }
+/* Estilos adicionales para evitar conflictos con Bootstrap */
+.menu-container {
+    background-color: #333;
+}
+
+.menu-item {
+    float: left;
+}
+
+.menu-link {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
