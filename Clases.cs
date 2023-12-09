@@ -28,4 +28,27 @@ namespace Proyecto
         public int UsuarioID { get; set; }
 
     }
+
+    public class Reparacion
+    {
+        public int ReparacionID { get; set; }
+        public string Descripcion { get; set; }
+        public string Fecha { get; set; }
+        public int TecnicoID { get; set; }
+    }
+
+    public class DetalleReparacion
+    {
+        public int ReparacionID { get; set; }
+        public string Descripcion { get; set; }
+        public string Fecha { get; set; }
+        public int TecnicoID { get; set; }
+    }
+    public class Asignacion
+    {
+        public int AsignacionID { get; set; }
+        public string Descripcion { get; set; }
+        public string Fecha { get; set; }
+        public int TecnicoID { get; set; }
+    }
 }
