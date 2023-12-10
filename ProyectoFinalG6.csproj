@@ -93,7 +93,7 @@
     <Content Include="inicio.aspx" />
     <Content Include="reparaciones.aspx" />
     <Content Include="tecnicos.aspx" />
-    <Content Include="usuarios.aspx" />
+    <Content Include="clientes.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -148,12 +148,12 @@
     <Compile Include="tecnicos.aspx.designer.cs">
       <DependentUpon>tecnicos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="usuarios.aspx.cs">
-      <DependentUpon>usuarios.aspx</DependentUpon>
+    <Compile Include="clientes.aspx.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="usuarios.aspx.designer.cs">
-      <DependentUpon>usuarios.aspx</DependentUpon>
+    <Compile Include="clientes.aspx.designer.cs">
+      <DependentUpon>clientes.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

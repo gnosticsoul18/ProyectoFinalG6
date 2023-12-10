@@ -5,9 +5,9 @@ using System.Web;
 
 namespace Proyecto
 {
-    public class Usuario
+    public class Cliente
     {
-        public int UsuarioID { get; set; }
+        public int ClienteID { get; set; }
         public string Nombre { get; set; }
         public string CorreoElectronico { get; set; }
         public string Telefono { get; set; }
