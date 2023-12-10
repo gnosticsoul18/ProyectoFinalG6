@@ -51,6 +51,24 @@ namespace Proyecto
         protected global::System.Web.UI.WebControls.TextBox TnombreTecnico;
 
         /// <summary>
+        /// Control Lcorreot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lcorreot;
+
+        /// <summary>
+        /// Control Tcorreot.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Tcorreot;
+
+        /// <summary>
         /// Control Lespecialidad.
         /// </summary>
         /// <remarks>

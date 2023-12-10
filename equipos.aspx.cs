@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using System;
 
 namespace Proyecto
 {
@@ -44,8 +40,8 @@ namespace Proyecto
 
         protected void bagregarEquipo_Click(object sender, EventArgs e)
         {
-            string tipoEquipo = TtipoEquipo.Text;
-            string modelo = Tmodelo.Text;
+            string tipoEquipo = DdlTipoEquipo.SelectedValue;
+            string modelo = DdlModelo.SelectedValue;
             int Clienteid = Convert.ToInt32(TClienteid.Text);
 
             int resultado = AgregarEquipo(tipoEquipo, modelo, Clienteid);
@@ -53,8 +49,6 @@ namespace Proyecto
             if (resultado > 0)
             {
                 MostrarAlerta("Equipo agregado con éxito");
-                TtipoEquipo.Text = string.Empty;
-                Tmodelo.Text = string.Empty;
                 TClienteid.Text = string.Empty;
                 LlenarGrid();
             }
@@ -101,8 +95,8 @@ namespace Proyecto
                 if (equipo != null)
                 {
                     // Actualizar la información del equipo con los nuevos datos
-                    equipo.TipoEquipo = TtipoEquipo.Text;
-                    equipo.Modelo = Tmodelo.Text;
+                    equipo.TipoEquipo = DdlTipoEquipo.SelectedValue;
+                    equipo.Modelo = DdlModelo.SelectedValue;
                     equipo.Clienteid = Convert.ToInt32(TClienteid.Text);
 
                     // Llamar al método para modificar el equipo
@@ -196,8 +190,8 @@ namespace Proyecto
                             if (dt.Rows.Count > 0)
                             {
                                 // Llenar los controles con los datos del equipo consultado
-                                TtipoEquipo.Text = dt.Rows[0]["tipoEquipo"].ToString();
-                                Tmodelo.Text = dt.Rows[0]["modelo"].ToString();
+                                DdlTipoEquipo.SelectedValue = dt.Rows[0]["tipoEquipo"].ToString();
+                                DdlModelo.SelectedValue = dt.Rows[0]["modelo"].ToString();
                                 TClienteid.Text = dt.Rows[0]["Clienteid"].ToString();
                             }
                             else

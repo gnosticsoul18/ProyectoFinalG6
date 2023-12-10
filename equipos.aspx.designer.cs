@@ -42,13 +42,13 @@ namespace Proyecto
         protected global::System.Web.UI.WebControls.Label LtipoEquipo;
 
         /// <summary>
-        /// Control TtipoEquipo.
+        /// Control DdlTipoEquipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TtipoEquipo;
+        protected global::System.Web.UI.WebControls.DropDownList DdlTipoEquipo;
 
         /// <summary>
         /// Control Lmodelo.
@@ -60,13 +60,13 @@ namespace Proyecto
         protected global::System.Web.UI.WebControls.Label Lmodelo;
 
         /// <summary>
-        /// Control Tmodelo.
+        /// Control DdlModelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Tmodelo;
+        protected global::System.Web.UI.WebControls.DropDownList DdlModelo;
 
         /// <summary>
         /// Control LclienteID.

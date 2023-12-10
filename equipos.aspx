@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Proyecto.Master" AutoEventWireup="true" CodeBehind="equipos.aspx.cs" Inherits="Proyecto.equipos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,16 +14,30 @@
         </asp:GridView>
 
         <br />
-        ID Equipo: <asp:TextBox ID="TequipoID" runat="server"></asp:TextBox>
+        ID Equipo:
+        <asp:TextBox ID="TequipoID" runat="server"></asp:TextBox>
         <br />
         <br />
 
-        <asp:Label ID="LtipoEquipo" runat="server" Text="Tipo de Equipo:  "></asp:Label>
-        <asp:TextBox ID="TtipoEquipo" runat="server" Width="175px"></asp:TextBox>
+        <asp:Label ID="LtipoEquipo" runat="server" Text="Tipo de Equipo: "></asp:Label>
+        <asp:DropDownList ID="DdlTipoEquipo" runat="server" Width="175px">
+            <asp:ListItem Text="Laptop" Value="Laptop"></asp:ListItem>
+            <asp:ListItem Text="PC Gaming" Value="PC Gaming"></asp:ListItem>
+            <asp:ListItem Text="PC Escritorio" Value="PC Escritorio"></asp:ListItem>
+            <asp:ListItem Text="Impresora" Value="Impresora"></asp:ListItem>
+            <asp:ListItem Text="Servidor" Value="Servidor"></asp:ListItem>
+        </asp:DropDownList>
         <br />
         <br />
-        <asp:Label ID="Lmodelo" runat="server" Text="Modelo:  "></asp:Label>
-        <asp:TextBox ID="Tmodelo" runat="server" Width="175px"></asp:TextBox>
+        <asp:Label ID="Lmodelo" runat="server" Text="Modelo: "></asp:Label>
+        <asp:DropDownList ID="DdlModelo" runat="server" Width="175px">
+            <asp:ListItem Text="HP" Value="HP"></asp:ListItem>
+            <asp:ListItem Text="Lenovo" Value="Lenovo"></asp:ListItem>
+            <asp:ListItem Text="Epson" Value="Epson"></asp:ListItem>
+            <asp:ListItem Text="Dell" Value="Dell"></asp:ListItem>
+            <asp:ListItem Text="Alienware" Value="Alienware"></asp:ListItem>
+            <asp:ListItem Text="Asus" Value="Asus"></asp:ListItem>
+        </asp:DropDownList>
         <br />
         <br />
         <asp:Label ID="LclienteID" runat="server" Text="ID Usuario:  "></asp:Label>

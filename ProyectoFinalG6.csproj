@@ -91,6 +91,7 @@
     <Content Include="img\construccion.jpg" />
     <Content Include="img\fondo1.jpg" />
     <Content Include="inicio.aspx" />
+    <Content Include="login.aspx" />
     <Content Include="reparaciones.aspx" />
     <Content Include="tecnicos.aspx" />
     <Content Include="clientes.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="equipos.aspx.designer.cs">
       <DependentUpon>equipos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Proyecto.Master.cs">
       <DependentUpon>Proyecto.Master</DependentUpon>

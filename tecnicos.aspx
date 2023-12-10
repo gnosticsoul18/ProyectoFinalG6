@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Proyecto.Master" AutoEventWireup="true" CodeBehind="tecnicos.aspx.cs" Inherits="Proyecto.tecnicos" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -17,6 +18,10 @@
         <br />
         <asp:Label ID="LnombreTecnico" runat="server" Text="Nombre Técnico:  "></asp:Label>
         <asp:TextBox ID="TnombreTecnico" runat="server" Width="175px"></asp:TextBox>
+        <br />
+        <br />
+        <asp:Label ID="Lcorreot" runat="server" Text="Correo Electrónico:  "></asp:Label>
+        <asp:TextBox ID="Tcorreot" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Label ID="Lespecialidad" runat="server" Text="Especialidad:  "></asp:Label>

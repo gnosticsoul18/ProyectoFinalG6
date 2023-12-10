@@ -46,14 +46,16 @@ namespace Proyecto
         {
             string nombreTecnico = TnombreTecnico.Text;
             string especialidad = Tespecialidad.Text;
+            string correoTecnico = Tcorreot.Text;  // Agrega esta línea para obtener el valor del nuevo campo
 
-            int resultado = AgregarTecnico(nombreTecnico, especialidad);
+            int resultado = AgregarTecnico(nombreTecnico, especialidad, correoTecnico);
 
             if (resultado > 0)
             {
                 MostrarAlerta("Técnico agregado con éxito");
                 TnombreTecnico.Text = string.Empty;
                 Tespecialidad.Text = string.Empty;
+                Tcorreot.Text = string.Empty;  // Limpia el campo de correo después de agregar un técnico
                 LlenarGrid();
             }
             else
@@ -88,24 +90,18 @@ namespace Proyecto
 
         protected void BmodificarTecnico_Click(object sender, EventArgs e)
         {
-            // Obtener el ID del técnico ingresado en el TextBox
             int tecnicoID = 0;
             if (int.TryParse(TtecnicoID.Text, out tecnicoID))
             {
-                // Obtener la información del técnico desde la base de datos
                 Tecnico tecnico = ObtenerTecnicoPorID(tecnicoID);
 
-                // Verificar si se encontró el técnico
                 if (tecnico != null)
                 {
-                    // Actualizar la información del técnico con los nuevos datos
                     tecnico.Nombre = TnombreTecnico.Text;
                     tecnico.Especialidad = Tespecialidad.Text;
+                    tecnico.CorreoElectronico = Tcorreot.Text;  // Agrega esta línea para obtener el valor del nuevo campo
 
-                    // Llamar al método para modificar el técnico
                     ModificarTecnico(tecnico);
-
-                    // Llenar el grid con los datos actualizados
                     LlenarGrid();
                 }
                 else
@@ -134,10 +130,11 @@ namespace Proyecto
             }
         }
 
-        private int AgregarTecnico(string nombre, string especialidad)
+        private int AgregarTecnico(string nombre, string especialidad, string correo)
         {
             int result = 0;
             string constr = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
+
             using (SqlConnection con = new SqlConnection(constr))
             {
                 using (SqlCommand cmd = new SqlCommand("AgregarTecnico", con))
@@ -145,11 +142,13 @@ namespace Proyecto
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Especialidad", especialidad);
+                    cmd.Parameters.AddWithValue("@CorreoElectronico", correo);  // Agrega este parámetro para el nuevo campo
 
                     con.Open();
                     result = cmd.ExecuteNonQuery();
                 }
             }
+
             return result;
         }
 
@@ -194,6 +193,7 @@ namespace Proyecto
                                 // Llenar los controles con los datos del técnico consultado
                                 TnombreTecnico.Text = dt.Rows[0]["nombre"].ToString();
                                 Tespecialidad.Text = dt.Rows[0]["especialidad"].ToString();
+                                Tcorreot.Text = dt.Rows[0]["correoElectronico"].ToString();
                             }
                             else
                             {
@@ -207,7 +207,6 @@ namespace Proyecto
 
         private void ModificarTecnico(Tecnico tecnico)
         {
-            // Configura la conexión a la base de datos
             string constr = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
 
             using (SqlConnection con = new SqlConnection(constr))
@@ -216,12 +215,11 @@ namespace Proyecto
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Agrega los parámetros necesarios para el procedimiento almacenado
                     cmd.Parameters.AddWithValue("@TecnicoID", tecnico.TecnicoID);
                     cmd.Parameters.AddWithValue("@Nombre", tecnico.Nombre);
                     cmd.Parameters.AddWithValue("@Especialidad", tecnico.Especialidad);
+                    cmd.Parameters.AddWithValue("@CorreoElectronico", tecnico.CorreoElectronico);  // Agrega este parámetro para el nuevo campo
 
-                    // Abre la conexión y ejecuta el comando
                     con.Open();
                     cmd.ExecuteNonQuery();
                 }
@@ -250,7 +248,8 @@ namespace Proyecto
                             {
                                 TecnicoID = Convert.ToInt32(reader["TecnicoID"]),
                                 Nombre = Convert.ToString(reader["nombre"]),
-                                Especialidad = Convert.ToString(reader["especialidad"])
+                                Especialidad = Convert.ToString(reader["especialidad"]),
+                                CorreoElectronico = Convert.ToString(reader["correoElectronico"])
                             };
                         }
                     }
