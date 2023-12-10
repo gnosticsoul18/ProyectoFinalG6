@@ -25,8 +25,8 @@
         <asp:TextBox ID="Tmodelo" runat="server" Width="175px"></asp:TextBox>
         <br />
         <br />
-        <asp:Label ID="LusuarioID" runat="server" Text="ID Usuario:  "></asp:Label>
-        <asp:TextBox ID="TusuarioID" runat="server"></asp:TextBox>
+        <asp:Label ID="LclienteID" runat="server" Text="ID Usuario:  "></asp:Label>
+        <asp:TextBox ID="TClienteid" runat="server"></asp:TextBox>
         <br />
     </div>
 

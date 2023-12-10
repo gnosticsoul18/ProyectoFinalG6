@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace Proyecto
+﻿namespace Proyecto
 {
     public class Cliente
     {
@@ -25,8 +20,7 @@ namespace Proyecto
         public int EquipoID { get; set; }
         public string TipoEquipo { get; set; }
         public string Modelo { get; set; }
-        public int UsuarioID { get; set; }
-
+        public int Clienteid { get; set; }
     }
 
     public class Reparacion
@@ -44,6 +38,7 @@ namespace Proyecto
         public string Fecha { get; set; }
         public int TecnicoID { get; set; }
     }
+
     public class Asignacion
     {
         public int AsignacionID { get; set; }

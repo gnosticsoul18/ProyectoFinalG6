@@ -69,22 +69,22 @@ namespace Proyecto
         protected global::System.Web.UI.WebControls.TextBox Tmodelo;
 
         /// <summary>
-        /// Control LusuarioID.
+        /// Control LclienteID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LusuarioID;
+        protected global::System.Web.UI.WebControls.Label LclienteID;
 
         /// <summary>
-        /// Control TusuarioID.
+        /// Control TClienteid.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TusuarioID;
+        protected global::System.Web.UI.WebControls.TextBox TClienteid;
 
         /// <summary>
         /// Control bagregarEquipo.

@@ -46,16 +46,16 @@ namespace Proyecto
         {
             string tipoEquipo = TtipoEquipo.Text;
             string modelo = Tmodelo.Text;
-            int usuarioID = Convert.ToInt32(TusuarioID.Text);
+            int Clienteid = Convert.ToInt32(TClienteid.Text);
 
-            int resultado = AgregarEquipo(tipoEquipo, modelo, usuarioID);
+            int resultado = AgregarEquipo(tipoEquipo, modelo, Clienteid);
 
             if (resultado > 0)
             {
                 MostrarAlerta("Equipo agregado con éxito");
                 TtipoEquipo.Text = string.Empty;
                 Tmodelo.Text = string.Empty;
-                TusuarioID.Text = string.Empty;
+                TClienteid.Text = string.Empty;
                 LlenarGrid();
             }
             else
@@ -103,7 +103,7 @@ namespace Proyecto
                     // Actualizar la información del equipo con los nuevos datos
                     equipo.TipoEquipo = TtipoEquipo.Text;
                     equipo.Modelo = Tmodelo.Text;
-                    equipo.UsuarioID = Convert.ToInt32(TusuarioID.Text);
+                    equipo.Clienteid = Convert.ToInt32(TClienteid.Text);
 
                     // Llamar al método para modificar el equipo
                     ModificarEquipo(equipo);
@@ -137,7 +137,7 @@ namespace Proyecto
             }
         }
 
-        private int AgregarEquipo(string tipoEquipo, string modelo, int usuarioID)
+        private int AgregarEquipo(string tipoEquipo, string modelo, int Clienteid)
         {
             int result = 0;
             string constr = ConfigurationManager.ConnectionStrings["Conexion"].ConnectionString;
@@ -148,7 +148,7 @@ namespace Proyecto
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@TipoEquipo", tipoEquipo);
                     cmd.Parameters.AddWithValue("@Modelo", modelo);
-                    cmd.Parameters.AddWithValue("@UsuarioID", usuarioID);
+                    cmd.Parameters.AddWithValue("@Clienteid", Clienteid);
 
                     con.Open();
                     result = cmd.ExecuteNonQuery();
@@ -198,7 +198,7 @@ namespace Proyecto
                                 // Llenar los controles con los datos del equipo consultado
                                 TtipoEquipo.Text = dt.Rows[0]["tipoEquipo"].ToString();
                                 Tmodelo.Text = dt.Rows[0]["modelo"].ToString();
-                                TusuarioID.Text = dt.Rows[0]["usuarioID"].ToString();
+                                TClienteid.Text = dt.Rows[0]["Clienteid"].ToString();
                             }
                             else
                             {
@@ -225,7 +225,7 @@ namespace Proyecto
                     cmd.Parameters.AddWithValue("@EquipoID", equipo.EquipoID);
                     cmd.Parameters.AddWithValue("@TipoEquipo", equipo.TipoEquipo);
                     cmd.Parameters.AddWithValue("@Modelo", equipo.Modelo);
-                    cmd.Parameters.AddWithValue("@UsuarioID", equipo.UsuarioID);
+                    cmd.Parameters.AddWithValue("@Clienteid", equipo.Clienteid);
 
                     // Abre la conexión y ejecuta el comando
                     con.Open();
@@ -257,7 +257,7 @@ namespace Proyecto
                                 EquipoID = Convert.ToInt32(reader["EquipoID"]),
                                 TipoEquipo = Convert.ToString(reader["tipoEquipo"]),
                                 Modelo = Convert.ToString(reader["modelo"]),
-                                UsuarioID = Convert.ToInt32(reader["usuarioID"])
+                                Clienteid = Convert.ToInt32(reader["Clienteid"])
                             };
                         }
                     }
