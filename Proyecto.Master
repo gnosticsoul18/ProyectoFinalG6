@@ -22,6 +22,8 @@
                 <li class="menu-item"><a href="asignaciones.aspx" class="menu-link">Asignaciones</a></li>
                 <li class="menu-item"><a href="reparaciones.aspx" class="menu-link">Reparaciones</a></li>
                 <li class="menu-item"><a href="detallesreparacion.aspx" class="menu-link">Detalles</a></li>
+                <li class="menu-item"><a href="usuarios.aspx" class="menu-link">Mantenimiento Usuarios</a></li>
+                
             </ul>
         </div>
         <div>

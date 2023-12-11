@@ -169,3 +169,13 @@ input[type="text"] {
 .btn {
     margin-top: 10px;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    background-color: #7f8c8d; /* Gris medio */
+    color: #ecf0f1; /* Texto blanco */
+    border: 1px solid #34495e; /* Borde gris oscuro */
+    padding: 5px;
+    margin-bottom: 10px;
+}

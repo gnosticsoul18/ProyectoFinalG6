@@ -95,6 +95,7 @@
     <Content Include="reparaciones.aspx" />
     <Content Include="tecnicos.aspx" />
     <Content Include="clientes.aspx" />
+    <Content Include="usuarios.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="clientes.aspx.designer.cs">
       <DependentUpon>clientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.aspx.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="usuarios.aspx.designer.cs">
+      <DependentUpon>usuarios.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
